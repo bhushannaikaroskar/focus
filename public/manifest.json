@@ -1,6 +1,13 @@
 {
   "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Focus",
+  "author":"Bhushan naikaroskar",
+  "version":"1.0",
+  "description":"Maximize your focus with on every tab.",
+  "chrome_url_overrides":{
+    "newtab":"index.html"
+  },
+  "manifest_version":3,
   "icons": [
     {
       "src": "favicon.ico",

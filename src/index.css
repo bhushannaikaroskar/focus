@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+/* @import url(https://grand-ui.netlify.app/components/components.css); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--COLOR-TEXT-WHITE);
+}
+
+p{
+    font-size: 1.6rem;
+}
+
+:root{
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 62.5%;
+  --WHITE: #ffffff;
+  --OFF-WHITE: #eeeeee;
+  --LIGHT-GREY: #dedede;
+  --GREY: #a3a3a3;
+  --DARK-GREY: #616161;
+  --OFF-BLACK: #232323;
+  --BLACK: #000000;
+  --PRIMARY-50: #d7f8e3;
+  --PRIMARY-100: #bcf2d0;
+  --PRIMARY-200: #8ce9b2;
+  --PRIMARY-300: #4be190;
+  --PRIMARY-400: #00d977;
+  --PRIMARY-500: #00cf60;
+  --PRIMARY-800: #00993d;
+  --COLOR-ERROR: #ff8989;
+  --COLOR-ERROR-DARK: #f02d2d;
+  --COLOR-WARNING: #faee87;
+  --COLOR-WARNING-DARK: #ebd61c;
+  --COLOR-SUCCESS: #91ffb4;
+  --COLOR-SUCCESS-DARK: #00c03d;
+  --COLOR-BORDER: var(--OFF-WHITE);
+  --COLOR-BORDER-1: var(--OFF-BLACK);
+  --COLOR-BUTTON: var(--OFF-BLACK);
+  --COLOR-TEXT: var(--OFF-BLACK);
+  --COLOR-TEXT-2: var(--DARK-GREY);
+  --COLOR-SHADOW: #1b1b1b1e;
+  --COLOR-SHADOW-2: #1b1b1b33;
+  --COLOR-SHADOW-3: #1b1b1b66;
+  --COLOR-SHADOW-PRIMARY-50: #d7f8e322;
+  --COLOR-SHADOW-PRIMARY: #4be19055;
+  --COLOR-SHADOW-PRIMARY-400: #00d97755;
+  --COLOR-BLACK-ALPHA: #00000077;
+  --COLOR-STAR-DEFAULT: #d3d3d3;
+  --COLOR-STAR-SELECTED: #ffd700;
+  --COLOR-TEXT-BLACK: var(--OFF-BLACK);
+  --COLOR-TEXT-WHITE: var(--OFF-WHITE);
+}
+
+h1{
+  font-size: 3.2rem;
+}

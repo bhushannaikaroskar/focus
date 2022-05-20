@@ -1,0 +1,67 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: stretch;
+}
+/* Tags */
+
+.tags-container{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.tag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--COLOR-SHADOW-PRIMARY-400);
+    border-radius: 99rem;
+    padding: 3px 5px ;
+}
+
+.tag-title{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--OFF-BLACK);
+    padding: 0 3px;
+}
+
+.tag-close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 2px;
+    border:0;
+    border-radius: 999px;
+    color: var(--OFF-BLACK);
+    background-color: var(--COLOR-SHADOW-3);
+}
+
+.input-tag{
+    border: 0;
+    padding: 1rem 0;
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--OFF-BLACK);
+    width: 100%;
+    background: transparent;
+}
+
+.input-tag:focus-visible{
+    outline: 0;
+}
+
+.icon-color-primary{
+    color:var(--PRIMARY-300)
+}
+
+
+
+@media screen and (max-width: 480px) {
+    :root{
+        font-size: 50%;
+    }
+}
