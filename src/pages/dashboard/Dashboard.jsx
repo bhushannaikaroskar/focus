@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Greeting } from "../../components";
+import { Greeting, RandomQuote, Weather } from "../../components";
 import { useDashboard } from "../../contexts/DashboardContext";
 import "./dashboard.css";
 
 export default function Dashboard() {
-    const { state,dispatch, addMainFocus, toggleMainFocus } = useDashboard();
+    const { state, dispatch, addMainFocus, toggleMainFocus } = useDashboard();
     const [inputText, setInputText] = useState("");
     const [dateString, setDateString] = useState("");
     const [isModal, setIsModal] = useState(false);
@@ -17,8 +17,10 @@ export default function Dashboard() {
 
     const timeHandler = () => {
         const date = new Date();
-        const string = `${date.getHours()} : ${
-            date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()
+        const hour = date.getHours();
+        const minute = date.getMinutes();
+        const string = `${hour === 0 ? `0${hour}` : hour} : ${
+            minute < 10 ? "0" + minute : minute
         }`;
         setDateString(string);
     };
@@ -34,10 +36,12 @@ export default function Dashboard() {
 
     return (
         <div className="dashboard">
-            <div className="header"></div>
+            <div className="header">
+                <Weather />
+            </div>
             <div className="main">
                 <div className="current-time">{dateString}</div>
-                <Greeting name={state.user}/>
+                <Greeting name={state.user} />
                 {!state.mainFocus.text ? (
                     <>
                         <h1 className="input-header">
@@ -58,7 +62,9 @@ export default function Dashboard() {
                             id="main-focus"
                             type="checkbox"
                             value={state.mainFocus.isCompleted}
-                            onClick={()=>toggleMainFocus(state.mainFocus.isCompleted)}
+                            onClick={() =>
+                                toggleMainFocus(state.mainFocus.isCompleted)
+                            }
                         />
                         <label
                             className="task-checkbox-label"
@@ -67,16 +73,25 @@ export default function Dashboard() {
                         <div className="mainfocus-text">
                             {state.mainFocus.text}
                         </div>
-                        <button style={isModal?{visibility:"visible"}:{}} className="options-btn" onClick={()=>{setIsModal(s=>!s)}}>
+                        <button
+                            style={isModal ? { visibility: "visible" } : {}}
+                            className="options-btn"
+                            onClick={() => {
+                                setIsModal((s) => !s);
+                            }}
+                        >
                             <span class="material-icons">more_horiz</span>
                             {isModal && (
                                 <div className="options-modal">
-                                    <button className="modal-options-btn" onClick={()=>{
-                                        if(state.mainFocus.isCompleted){
-                                            setInputText("")
-                                        }
-                                        dispatch({type:"RESET_FOCUS"})
-                                    }}>
+                                    <button
+                                        className="modal-options-btn"
+                                        onClick={() => {
+                                            if (state.mainFocus.isCompleted) {
+                                                setInputText("");
+                                            }
+                                            dispatch({ type: "RESET_FOCUS" });
+                                        }}
+                                    >
                                         <span className="material-icons">
                                             edit
                                         </span>
@@ -90,7 +105,9 @@ export default function Dashboard() {
                     </div>
                 )}
             </div>
-            <div className="footer"></div>
+            <div className="footer">
+                <RandomQuote />
+            </div>
         </div>
     );
 }

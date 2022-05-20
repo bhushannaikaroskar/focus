@@ -18,7 +18,7 @@
     visibility: hidden;
     opacity: 0;
     font-size: 0;
-    transition: opacity 0.5s ease-in ;
+    transition: all 0.5s ease-in ;
 }
 
 .quote-container:hover .quote-author{
