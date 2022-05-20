@@ -3,31 +3,29 @@ import { useDashboard } from "../../contexts/DashboardContext";
 import "./dashboard.css";
 
 export default function Dashboard() {
-    const { state, addMainFocus } = useDashboard();
+    const { state,dispatch, addMainFocus, toggleMainFocus } = useDashboard();
     const [inputText, setInputText] = useState("");
     const [dateString, setDateString] = useState("");
+    const [isModal, setIsModal] = useState(false);
 
     const mainFocusHandler = (event) => {
-        console.log(event);
         if (event.charCode === 13) {
             addMainFocus(inputText);
         }
     };
 
-    const timeHandler = ()=>{
+    const timeHandler = () => {
         const date = new Date();
-            const string = `${date.getHours()} : ${
-                date.getMinutes() < 10
-                    ? "0" + date.getMinutes()
-                    : date.getMinutes()
-            }`;
-            setDateString(string);
-    }
+        const string = `${date.getHours()} : ${
+            date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()
+        }`;
+        setDateString(string);
+    };
 
     useEffect(() => {
-        timeHandler()
+        timeHandler();
         const interval = setInterval(() => {
-            timeHandler()
+            timeHandler();
         }, 3000);
 
         return () => clearInterval(interval);
@@ -53,17 +51,41 @@ export default function Dashboard() {
                         />
                     </>
                 ) : (
-                    <div class="mainfocus-container">
+                    <div className="mainfocus-container">
                         <input
-                            class="task-checkbox"
+                            className="task-checkbox"
                             id="main-focus"
                             type="checkbox"
+                            value={state.mainFocus.isCompleted}
+                            onClick={()=>toggleMainFocus(state.mainFocus.isCompleted)}
                         />
                         <label
-                            class="task-checkbox-label"
-                            for="main-focus"
+                            className="task-checkbox-label"
+                            htmlFor="main-focus"
                         ></label>
-                        <div class="mainfocus-text">{state.mainFocus.text}</div>
+                        <div className="mainfocus-text">
+                            {state.mainFocus.text}
+                        </div>
+                        <button style={isModal?{visibility:"visible"}:{}} className="options-btn" onClick={()=>{setIsModal(s=>!s)}}>
+                            <span class="material-icons">more_horiz</span>
+                            {isModal && (
+                                <div className="options-modal">
+                                    <button className="modal-options-btn" onClick={()=>{
+                                        if(state.mainFocus.isCompleted){
+                                            setInputText("")
+                                        }
+                                        dispatch({type:"RESET_FOCUS"})
+                                    }}>
+                                        <span className="material-icons">
+                                            edit
+                                        </span>
+                                        {state.mainFocus.isCompleted
+                                            ? "New task"
+                                            : "Edit"}
+                                    </button>
+                                </div>
+                            )}
+                        </button>
                     </div>
                 )}
             </div>
