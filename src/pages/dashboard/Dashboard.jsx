@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Greeting } from "../../components";
 import { useDashboard } from "../../contexts/DashboardContext";
 import "./dashboard.css";
 
@@ -36,7 +37,7 @@ export default function Dashboard() {
             <div className="header"></div>
             <div className="main">
                 <div className="current-time">{dateString}</div>
-                <div className="welcome-message">Good morning, Bhushan</div>
+                <Greeting name={state.user}/>
                 {!state.mainFocus.text ? (
                     <>
                         <h1 className="input-header">
