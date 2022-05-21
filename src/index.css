@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
-/* @import url(https://grand-ui.netlify.app/components/components.css); */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 * {
@@ -14,7 +13,6 @@ p{
 }
 
 :root{
-  /* font-family: 'Open Sans', sans-serif; */
   font-family: 'Montserrat', sans-serif;
   font-size: 62.5%;
   --WHITE: #ffffff;

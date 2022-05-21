@@ -169,7 +169,6 @@
     border-radius: 3px;
     background-color: var(--WHITE);
     z-index: 10;
-    /* overflow: hidden; */
 }
 
 .options-modal::before{
@@ -213,7 +212,6 @@
     position: relative;
     background-color: transparent;
     font-size: 1.6rem;
-    /* font-weight: 600; */
     cursor: pointer;
     border:0
 }
