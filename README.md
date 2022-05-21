@@ -1,17 +1,16 @@
 # Focus
 <div align="center">
-<img alt="chess_tv" src="./focus.png"  />
+<img alt="focus" src="./focus.png"  />
 </div>
 
 <br>
 
 Focus is an chrome extension that helps you stay focused throughout. You can add your daily tasks and get them completed.
   
-
 <br>
 
 ### Live Link:
-You can visit a working site of focus: [click here](https://chess-tv.netlify.app/)
+You can visit a working site of focus: [click here](https://focusify.netlify.app/)
 
 <br>
 
