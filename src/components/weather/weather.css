@@ -1,0 +1,32 @@
+.weather-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 5px;
+    margin: 5px 2rem
+}
+
+.weather-icon{
+    width: 6rem;
+    height: 6rem;
+}
+
+.weather-icon img{
+    width: 100%;
+}
+
+.weather-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.weather-temperature{
+    font-size: 3.6rem;
+}
+
+.city-name{
+    font-size: 1.8rem;
+}

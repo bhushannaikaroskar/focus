@@ -1,0 +1,27 @@
+
+.quote-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    gap: 5px; 
+    transition: all 5s ease ;
+}
+
+.quote-message{
+    transition: all 3s ease-in;
+}
+
+.quote-author{
+    visibility: hidden;
+    opacity: 0;
+    font-size: 0;
+    transition: all 0.5s ease-in ;
+}
+
+.quote-container:hover .quote-author{
+    visibility: visible;
+    opacity: 1;
+    font-size: 1.6rem;
+}
