@@ -13,7 +13,6 @@ export default function Weather() {
                 `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
             )
             .then((res) => {
-                console.log(res);
                 setWeather({
                     temperature: (res.data.main.temp - 273.15).toFixed(0),
                     icon: res.data.weather[0].icon,
@@ -24,7 +23,6 @@ export default function Weather() {
 
     const getLocation = () => {
         navigator.geolocation.getCurrentPosition((position) => {
-            console.log(position);
             const { longitude, latitude } = position.coords;
             setCoordinates({ lon: longitude, lat: latitude });
         });
