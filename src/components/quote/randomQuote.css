@@ -1,5 +1,6 @@
 
 .quote-container{
+    grid-area: quote;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,6 +12,7 @@
 
 .quote-message{
     transition: all 3s ease-in;
+    text-align: center;
 }
 
 .quote-author{

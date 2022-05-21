@@ -2,7 +2,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
-// import { Dashboard, WelcomePage } from './components';
 import { useDashboard } from './contexts/DashboardContext';
 import { Dashboard, WelcomePage } from './pages';
 
