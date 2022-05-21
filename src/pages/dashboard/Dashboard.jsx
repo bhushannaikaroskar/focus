@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Greeting, RandomQuote, Weather } from "../../components";
+import { Greeting, RandomQuote, TodoList, Weather } from "../../components";
 import { useDashboard } from "../../contexts/DashboardContext";
 import "./dashboard.css";
 
@@ -8,6 +8,7 @@ export default function Dashboard() {
     const [inputText, setInputText] = useState("");
     const [dateString, setDateString] = useState("");
     const [isModal, setIsModal] = useState(false);
+    const [taskModal, setTaskModal] = useState(false);
 
     const mainFocusHandler = (event) => {
         if (event.charCode === 13) {
@@ -107,6 +108,12 @@ export default function Dashboard() {
             </div>
             <div className="footer">
                 <RandomQuote />
+                <div className="task-button-container">
+                <button className="task-button" onClick={()=>setTaskModal(s=>!s)}>
+                    Todo
+                    {taskModal && <TodoList/>}
+                </button>
+                </div>
             </div>
         </div>
     );

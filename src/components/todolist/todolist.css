@@ -1,0 +1,145 @@
+.todo-list-container{
+    position: absolute;
+    bottom: 4rem;
+    right: -1rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30rem;
+    background-color: var(--WHITE);
+    border-radius: 5px;
+}
+
+.todo-list-container::before{
+    content: "";
+    background-color: var(--WHITE);
+    position: inherit;
+    bottom: -5px;
+    right: 20px;
+    height: 10px;
+    width:  10px;
+    transform: rotate(45deg);
+}
+
+.todo-title{
+    padding: 2rem;
+    font-size: 2rem;
+    color: var(--OFF-BLACK);
+}
+
+.todo-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1.6rem;
+}
+
+.todo-message{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 0 2rem;
+    color: var(--OFF-BLACK);
+}
+
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+    padding: 0 2rem;
+    width: 100%;
+    color: var(--OFF-BLACK);
+}
+
+.todo-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--OFF-BLACK);
+}
+
+.todo-item-content{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.todo-item label{
+    color: var(--OFF-BLACK);
+}
+
+.todo-options-btn{
+    position: relative;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 9rem
+}
+
+.todo-options-btn:hover{
+    background-color: var(--LIGHT-GREY);
+}
+
+.todo-item:hover .todo-options-btn{
+    visibility: visible;
+}
+
+.todo-options-btn span{
+    color: var(--OFF-BLACK);
+    font-size: 1.6rem;
+}
+
+/* TASK MODAL */
+
+.todo-options-btn .options-modal{
+    background-color: var(--LIGHT-GREY);
+}
+
+.todo-options-btn .options-modal::before{
+    background-color: var(--LIGHT-GREY);
+}
+
+.task-options-modal{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 160%;
+    right: -10%;
+    min-height: 2rem;
+    width: max-content;
+    min-width: 8rem;
+    border-radius: 3px;
+    background-color: var(--WHITE);
+    z-index: 10;
+    overflow: hidden;
+}
+
+.task-modal-options-btn{
+
+}
+
+.todo-input-container{
+    padding: 2rem;
+}
+
+.todo-input{
+    border: 0;
+    font-size: 1.6rem;
+    color: var(--OFF-BLACK);
+}
+
+.todo-input:focus-visible{
+    outline: 0;
+}

@@ -32,17 +32,28 @@ export const dashBoardReducer = (state, action) => {
         case "ADD_TASK":
             return {
                 ...state,
-                tasks: state.tasks.push({
-                    _id: 1,
-                    title: action.payload.taskName,
-                    isCompleted: false,
-                }),
+                tasks: [
+                    ...state.tasks,
+                    {
+                        title: action.payload.taskName,
+                        isCompleted: false,
+                    },
+                ],
             };
         case "REMOVE_TASK":
             return {
                 ...state,
                 tasks: state.tasks.filter(
-                    (task) => task._id === action.payload._id
+                    (task, index) => index !== action.payload.index
+                ),
+            };
+        case "TOGGLE_TASK":
+            return {
+                ...state,
+                tasks: state.tasks.map((task, index) =>
+                    (index === action.payload.index)
+                        ? { ...task, isCompleted: !task.isCompleted }
+                        : task
                 ),
             };
         default:
