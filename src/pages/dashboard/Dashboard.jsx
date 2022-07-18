@@ -62,7 +62,7 @@ export default function Dashboard() {
                             className="task-checkbox"
                             id="main-focus"
                             type="checkbox"
-                            value={state.mainFocus.isCompleted}
+                            checked={state.mainFocus.isCompleted}
                             onClick={() =>
                                 toggleMainFocus(state.mainFocus.isCompleted)
                             }

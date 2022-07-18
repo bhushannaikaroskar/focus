@@ -54,6 +54,8 @@
     padding: 0 2rem;
     width: 100%;
     color: var(--OFF-BLACK);
+    max-height:30rem;
+    overflow-y: scroll;
 }
 
 .todo-item{
